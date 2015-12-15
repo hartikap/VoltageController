@@ -1,0 +1,40 @@
+<h1> Tervehdys {{username}} </h1>
+
+<x-knobjs-knob id="knob"></x-knobjs-knob>
+
+<input id="input" style="vertical-align:top;">
+
+<script>
+
+    window.onload = function(){
+    
+        var knob = document.getElementById("knob");
+        
+        var input = document.getElementById("input");
+        
+        knob.onchange = function(){
+        
+            input.value = ~~knob.value;
+            
+            socket.emit('ping', Math.round(input.value*2.55).toString());
+        
+        }
+        
+        input.onchange = function(){
+        
+            knob.value = ~~input.value;
+            
+            socket.emit('ping', Math.round(input.value*2.55).toString());
+        
+        }
+        
+    }
+    
+</script>
+        
+
+<button type="button"class="btn btn-primary" id="button2">Update</button>
+
+    
+        
+        
