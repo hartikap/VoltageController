@@ -1,11 +1,11 @@
-var socket = io.connect('http://192.168.69.123:8088');
+//var socket = io.connect('http://10.105.0.31:8088');
 
 /*socket.on('pong', function (data) {
     console.log("pong");
 });*/
 
 
-
+/*
 $(document).ready(function() {
 
     console.log("dom Control ready");
@@ -24,4 +24,4 @@ $(document).ready(function() {
     });
     
     
-});
+});*/
