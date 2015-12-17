@@ -18,11 +18,10 @@ main_module.controller('mainController', function($scope, factory) {
             socket.emit('ping', Math.round(input.value*2.55).toString());
     };
     
-    var voltageField = document.getElementById("voltagefield");
+
     socket.on('voltage', function (data) {
         console.log(data); // Päivittää datan reaaliaikaisesti Consoleen
         $scope.measuredVoltage = data; // Ei välity partial_control.html -näkymään
-
     });
     
 });
