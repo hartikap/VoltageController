@@ -11,17 +11,18 @@ main_module.controller('mainController', function($scope, factory) {
     var input = document.getElementById("input");
     knob.onchange = function(){
         input.value = ~~knob.value;
-            socket.emit('ping', Math.round(input.value*2.55).toString());
+        socket.emit('voltageOut', Math.round(input.value*2.55).toString());
     };
     input.onchange = function(){
         knob.value = ~~input.value;
-            socket.emit('ping', Math.round(input.value*2.55).toString());
+        socket.emit('voltageOut', Math.round(input.value*2.55).toString());
     };
     
 
-    socket.on('voltage', function (data) {
-        console.log(data); // Päivittää datan reaaliaikaisesti Consoleen
-        $scope.measuredVoltage = data; // Ei välity partial_control.html -näkymään
+    socket.on('voltageIn', function (data) {
+        //console.log(data); // Päivittää datan reaaliaikaisesti Consoleen
+        $scope.measuredVoltage = data*5/1023; // Ei välity partial_control.html -näkymään
+        $scope.$apply();
     });
     
 });
