@@ -2,7 +2,7 @@ main_module.controller('mainController', function($scope, factory) {
     
     // Connects to the raspberry with websocket. Enter the ip-address of Raspi and
     // the port raspi is listening as a parameter
-    var socket = io.connect('http://10.105.0.31:8088');
+    var socket = io.connect('http://192.168.0.102:8088');
 
     $scope.measuredVoltage = 85;
     $scope.username = factory.username;
@@ -20,8 +20,7 @@ main_module.controller('mainController', function($scope, factory) {
     
 
     socket.on('voltageIn', function (data) {
-        //console.log(data); // Päivittää datan reaaliaikaisesti Consoleen
-        $scope.measuredVoltage = data*5/1023; // Ei välity partial_control.html -näkymään
+        $scope.measuredVoltage = data*5/1023;
         $scope.$apply();
     });
     

@@ -4,7 +4,5 @@ main_module.factory('factory', function($resource) {
     
     factory.username = "default";
     
-    
-    
     return factory;
 })

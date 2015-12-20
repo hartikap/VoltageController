@@ -2,14 +2,7 @@ var express = require('express');
 var app = express();
 var path = require("path");
 var http = require('http').Server(app);
-//var io = require('socket.io')(http);
-
 var used_port = 8081;
-
-/*app.get('/', function (req, res) {
-    
-    res.send('Hello get');
-})*/
 
 
 app.use('/',express.static(path.join(__dirname, 'Views')));
@@ -20,13 +13,6 @@ app.use('/lib',express.static(path.join(__dirname, 'lib')));
 app.use('/Modules',express.static(path.join(__dirname, 'Modules')));
 app.use('/factories',express.static(path.join(__dirname, 'factories')));
 
-/*io.on('connection', function(socket){
-  socket.on('event', function() {
-      
-      console.log('a user connected');
-      
-  }); //server side code
-});*/
 
 // ROUTERS---------------------------------------------
 
