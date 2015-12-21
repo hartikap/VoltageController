@@ -1,18 +1,28 @@
-#inputwindow {
-    width: 500px;
-    margin: 50px;
-    border: 5px solid #340146;
-    border-radius: 5px;
+.inputwindow {
+    width: 400px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 50px;
+    border: 3px solid #120044;
+    border-radius: 3px;
     padding: 50px;
     text-align: center;
+    background-color: #846BC8;
 
 }
 
 
 
+.cv {
+    margin-left:20px;
+    width: 400px;
+}
+
+
 .cvmoduleview {
-    background-color: #5E2971;
-    color: #340146;
+    background-color: #3A08C4;
+    color: #C7BDE5;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     
 }
 
@@ -30,8 +40,8 @@
 }
 
 .knobjs-bg {fill: rgba(0,0,0,0);}
-.knobjs-arcbg {fill: rgba(0,0,0,0); stroke-width:0.1; stroke: #555;}
-.knobjs-arc {fill:#95849C;}
+.knobjs-arcbg {fill: rgba(0,0,0,0); stroke-width:0.1; stroke: #C7BDE5;}
+.knobjs-arc {fill:#120044;}
 
 x-knobjs-knob {
   display: inline-block;
