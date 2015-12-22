@@ -2,7 +2,11 @@ var express = require('express');
 var app = express();
 var path = require("path");
 var http = require('http').Server(app);
-var used_port = 8081;
+//var used_port = 8081;
+
+// Environmet variables for OpenShift
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 
 
 app.use('/',express.static(path.join(__dirname, 'Views')));
@@ -16,10 +20,6 @@ app.use('/factories',express.static(path.join(__dirname, 'factories')));
 
 // ROUTERS---------------------------------------------
 
-var server = app.listen(used_port, function () {
-
-  var host = server.address().address;
-  var port = server.address().port;
-  console.log("Example app listening at port " + port);
-
-})
+app.listen(server_port, server_ip_address, function(){
+  console.log("Listening on " + server_ip_address + ", server_port " + server_port)
+});
